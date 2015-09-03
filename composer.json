@@ -1,0 +1,33 @@
+{
+    "name": "codecollab/demo",
+    "description": "Demo project for the CodeCollab project packages",
+    "version": "0.1.0",
+    "type": "library",
+    "keywords": ["codecollab", "demo"],
+    "homepage": "https://github.com/CodeCollab/Demo",
+    "license": "See the LICENSE file",
+    "authors": [
+        {
+            "name": "Pieter Hordijk",
+            "role": "Lead"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {"CodeCollab\\Demo\\": "src/"}
+    },
+    "require": {
+        "php": ">=7.0-dev",
+        "rdlowrey/auryn": "1.1.*",
+        "codecollab/http": "dev-master",
+        "codecollab/authentication": "dev-master",
+        "codecollab/form": "dev-master",
+        "codecollab/i18n": "dev-master",
+        "codecollab/router": "dev-master",
+        "codecollab/template": "dev-master",
+        "codecollab/theme": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5"
+    }
+}
