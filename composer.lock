@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "de31196cab579201b883b305832acc9e",
+    "hash": "43e97086b4336818cae983f69d10abbe",
     "packages": [
         {
             "name": "codecollab/authentication",
@@ -197,12 +197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CodeCollab/Http.git",
-                "reference": "ef7424fd6beeacda8ffce3c4fc159751e0ea5e37"
+                "reference": "f687554d04eb7200c4d20702fb985a970510879f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CodeCollab/Http/zipball/ef7424fd6beeacda8ffce3c4fc159751e0ea5e37",
-                "reference": "ef7424fd6beeacda8ffce3c4fc159751e0ea5e37",
+                "url": "https://api.github.com/repos/CodeCollab/Http/zipball/f687554d04eb7200c4d20702fb985a970510879f",
+                "reference": "f687554d04eb7200c4d20702fb985a970510879f",
                 "shasum": ""
             },
             "require": {
@@ -239,7 +239,7 @@
                 "response",
                 "session"
             ],
-            "time": "2015-09-03 14:56:03"
+            "time": "2015-09-05 14:06:58"
         },
         {
             "name": "codecollab/i18n",
@@ -341,12 +341,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CodeCollab/Template.git",
-                "reference": "e05c44fe36f8142465d1e09ab71e62190c7511f3"
+                "reference": "f137c557be01f0cbdd7fd98c2a58d22f444c68f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CodeCollab/Template/zipball/e05c44fe36f8142465d1e09ab71e62190c7511f3",
-                "reference": "e05c44fe36f8142465d1e09ab71e62190c7511f3",
+                "url": "https://api.github.com/repos/CodeCollab/Template/zipball/f137c557be01f0cbdd7fd98c2a58d22f444c68f3",
+                "reference": "f137c557be01f0cbdd7fd98c2a58d22f444c68f3",
                 "shasum": ""
             },
             "require": {
@@ -377,7 +377,7 @@
                 "codecollab",
                 "template"
             ],
-            "time": "2015-08-31 14:43:36"
+            "time": "2015-09-04 19:00:59"
         },
         {
             "name": "codecollab/theme",
@@ -469,6 +469,113 @@
             "time": "2015-03-14 20:27:45"
         },
         {
+            "name": "matthiasmullie/minify",
+            "version": "1.3.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/minify.git",
+                "reference": "2cee2544198d97bca4ba094bc2df27d6458da1af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/2cee2544198d97bca4ba094bc2df27d6458da1af",
+                "reference": "2cee2544198d97bca4ba094bc2df27d6458da1af",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "matthiasmullie/path-converter": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*",
+                "satooshi/php-coveralls": "dev-master",
+                "scrapbook/psr-cache": "~0.2"
+            },
+            "bin": [
+                "bin/minifycss",
+                "bin/minifyjs"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\Minify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "minify@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CSS & JS minifier",
+            "homepage": "http://www.minifier.org",
+            "keywords": [
+                "JS",
+                "css",
+                "javascript",
+                "minifier",
+                "minify"
+            ],
+            "time": "2015-08-20 14:49:37"
+        },
+        {
+            "name": "matthiasmullie/path-converter",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/path-converter.git",
+                "reference": "b1e31c51e8c207ad6114f5b4ac4e652bc936c380"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/path-converter/zipball/b1e31c51e8c207ad6114f5b4ac4e652bc936c380",
+                "reference": "b1e31c51e8c207ad6114f5b4ac4e652bc936c380",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\PathConverter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "pathconverter@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Relative path converter",
+            "homepage": "http://github.com/matthiasmullie/path-converter",
+            "keywords": [
+                "converter",
+                "path",
+                "paths",
+                "relative"
+            ],
+            "time": "2015-06-01 15:20:30"
+        },
+        {
             "name": "nikic/fast-route",
             "version": "v0.6.0",
             "source": {
@@ -510,6 +617,56 @@
                 "routing"
             ],
             "time": "2015-06-18 19:15:47"
+        },
+        {
+            "name": "peehaa/minifine",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PeeHaa/Minifine.git",
+                "reference": "18b1c160fecf48468a64472f8838ec9a4ac23487"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PeeHaa/Minifine/zipball/18b1c160fecf48468a64472f8838ec9a4ac23487",
+                "reference": "18b1c160fecf48468a64472f8838ec9a4ac23487",
+                "shasum": ""
+            },
+            "require": {
+                "matthiasmullie/minify": "1.3.*",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Minifine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pieter Hordijk",
+                    "email": "info@pieterhordijk.com",
+                    "homepage": "https://pieterhordijk.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Minifier for web resources",
+            "homepage": "https://github.com/PeeHaa/Minifine",
+            "keywords": [
+                "JS",
+                "css",
+                "html",
+                "minify",
+                "uglify"
+            ],
+            "time": "2015-05-05 12:32:33"
         },
         {
             "name": "rdlowrey/auryn",
@@ -1025,12 +1182,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "bbcc371da7d9c7d58d62f895156a87c395695a39"
+                "reference": "615f18d3a33367a26b724b7fa857b75ffdabd562"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bbcc371da7d9c7d58d62f895156a87c395695a39",
-                "reference": "bbcc371da7d9c7d58d62f895156a87c395695a39",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/615f18d3a33367a26b724b7fa857b75ffdabd562",
+                "reference": "615f18d3a33367a26b724b7fa857b75ffdabd562",
                 "shasum": ""
             },
             "require": {
@@ -1091,7 +1248,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-02 07:15:35"
+            "time": "2015-09-05 08:37:14"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1617,6 +1774,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "php": 20,
+        "peehaa/minifine": 20,
         "codecollab/http": 20,
         "codecollab/authentication": 20,
         "codecollab/form": 20,

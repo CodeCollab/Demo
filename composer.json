@@ -14,11 +14,12 @@
     ],
     "minimum-stability": "dev",
     "autoload": {
-        "psr-4": {"CodeCollab\\Demo\\": "src/"}
+        "psr-4": {"Demo\\": "src/"}
     },
     "require": {
         "php": ">=7.0-dev",
         "rdlowrey/auryn": "1.1.*",
+        "peehaa/minifine": "dev-master",
         "codecollab/http": "dev-master",
         "codecollab/authentication": "dev-master",
         "codecollab/form": "dev-master",
