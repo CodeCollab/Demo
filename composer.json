@@ -18,17 +18,6 @@
     },
     "require": {
         "php": ">=7.0-dev",
-        "rdlowrey/auryn": "1.1.*",
-        "peehaa/minifine": "dev-master",
-        "codecollab/http": "dev-master",
-        "codecollab/authentication": "dev-master",
-        "codecollab/form": "dev-master",
-        "codecollab/i18n": "dev-master",
-        "codecollab/router": "dev-master",
-        "codecollab/template": "dev-master",
-        "codecollab/theme": "dev-master"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^5"
+        "codecollab/router": "dev-master"
     }
 }
