@@ -1,3 +1,5 @@
 <?php
 
-$texts = [];
+$texts = [
+    'site.title'                                            => 'CodeCollab Demo Application',
+];
