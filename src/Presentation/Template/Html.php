@@ -16,6 +16,8 @@ namespace Demo\Presentation\Template;
 
 use CodeCollab\Template\Html as BaseTemplate;
 use CodeCollab\Theme\Theme;
+use Minifine\Minifine;
+use CodeCollab\I18n\Translator;
 
 /**
  * HTML page template renderer
@@ -27,18 +29,36 @@ use CodeCollab\Theme\Theme;
  */
 class Html extends BaseTemplate
 {
+    /**
+     * @var \CodeCollab\Theme\Theme Instance of a theme loader
+     */
     private $theme;
+
+    /**
+     * @var \Minifine\Minifine Instance of a resource minifier
+     */
+    private $minifier;
+
+    /**
+     * @var \CodeCollab\I18n\Translator Instance of a translator
+     */
+    private $translator;
 
     /**
      * Creates instance
      *
-     * @param string $basePage The base (skeleton) page template
+     * @param string                      $basePage   The base (skeleton) page template
+     * @param \CodeCollab\Theme\Theme     $theme      Instance of a theme loader
+     * @param \Minifine\Minifine          $minifier   Instance of a resource minifier
+     * @param \CodeCollab\I18n\Translator $translator Instance of a translator
      */
-    public function __construct(string $basePage, Theme $theme)
+    public function __construct(string $basePage, Theme $theme, Minifine $minifier, Translator $translator)
     {
         parent::__construct($basePage);
 
-        $this->theme = $theme;
+        $this->theme      = $theme;
+        $this->minifier   = $minifier;
+        $this->translator = $translator;
     }
 
     /**
@@ -77,5 +97,18 @@ class Html extends BaseTemplate
         }
 
         return $output;
+    }
+
+    /**
+     * Translates a given key
+     *
+     * @param string $key  The key to translate
+     * @param array  $data The data to use to fill in dynamic parts of the translations
+     *
+     * @return string The translated string
+     */
+    private function translate(string $key, array $data = []): string
+    {
+        return $this->translator->translate($key, $data);
     }
 }
