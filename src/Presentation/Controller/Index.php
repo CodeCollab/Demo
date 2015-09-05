@@ -16,6 +16,7 @@ namespace Demo\Presentation\Controller;
 
 use CodeCollab\Http\Response\Response;
 use CodeCollab\Http\Response\StatusCode;
+use CodeCollab\Template\Html;
 
 /**
  * Index controller
