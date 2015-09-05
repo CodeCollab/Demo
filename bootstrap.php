@@ -42,8 +42,10 @@ require_once __DIR__ . '/init.deployment.php';
  * Prevent further execution when on CLI
  */
 if (php_sapi_name() === 'cli') {
-    return;
+    //return;
 }
+
+require __DIR__ . '/feed.php';
 
 /**
  * Setup the request object
