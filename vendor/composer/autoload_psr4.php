@@ -9,7 +9,4 @@ return array(
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'Demo\\' => array($baseDir . '/src'),
     'CodeCollab\\Router\\' => array($vendorDir . '/codecollab/router/src'),
-    'CodeCollab\\Http\\' => array($vendorDir . '/codecollab/http/src'),
-    'CodeCollab\\Encryption\\' => array($vendorDir . '/codecollab/encryption/src'),
-    'Auryn\\' => array($vendorDir . '/rdlowrey/auryn/lib'),
 );

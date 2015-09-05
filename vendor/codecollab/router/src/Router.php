@@ -69,32 +69,6 @@ class Router
     }
 
     /**
-     * Adds a route for a GET request
-     *
-     * @param string $path     The pattern of the path of the route
-     * @param array  $callback The callback of the route
-     *
-     * @return \CodeCollab\Router\Router Return instance of itself to create a fluent interface
-     */
-    public function get(string $path, array $callback): Router
-    {
-        return $this->addRoute('GET', $path, $callback);
-    }
-
-    /**
-     * Adds a route for a POST request
-     *
-     * @param string $path     The pattern of the path of the route
-     * @param array  $callback The callback of the route
-     *
-     * @return \CodeCollab\Router\Router Return instance of itself to create a fluent interface
-     */
-    public function post(string $path, array $callback): Router
-    {
-        return $this->addRoute('POST', $path, $callback);
-    }
-
-    /**
      * Adds a route
      *
      * @param string $verb     The HTTP verb of the route
@@ -109,35 +83,5 @@ class Router
 //echo '<pre>';
 //var_dump([$verb, $path, $callback]);
         return $this;
-    }
-
-    /**
-     * Gets the dispatcher
-     *
-     * @return \FastRoute\Dispatcher The dispatcher
-     */
-    public function getDispatcher(): Dispatcher
-    {
-        if ($this->forceReload || !file_exists($this->cacheFile)) {
-            $dispatchData = $this->buildCache();
-        } else {
-            $dispatchData = require $this->cacheFile;
-        }
-
-        return call_user_func($this->dispatcherFactory, $dispatchData);
-    }
-
-    /**
-     * Builds the routes cache file
-     *
-     * @return array The dispatch data
-     */
-    private function buildCache(): array
-    {
-        $dispatchData = $this->routeCollector->getData();
-
-        file_put_contents($this->cacheFile, '<?php return ' . var_export($dispatchData, true) . ';');
-
-        return $dispatchData;
     }
 }

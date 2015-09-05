@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    $vendorDir . '/defuse/php-encryption/Crypto.php',
     $vendorDir . '/nikic/fast-route/src/functions.php',
 );
