@@ -52,7 +52,23 @@ class Error
      */
     public function notFound(Html $template)
     {
-        $this->response->setContent($template->renderPage('/home/index.phtml'));
+        $this->response->setContent($template->renderPage('/error/not-found.phtml'));
+
+        $this->response->setStatusCode(StatusCode::NOT_FOUND);
+
+        return $this->response;
+    }
+
+    /**
+     * Render the method not allowed page
+     *
+     * @param \CodeCollab\Presentation\Template\Html $template A HTML template renderer
+     *
+     * @return \Symfony\Component\HttpFoundation\Response The HTTP response
+     */
+    public function notFound(Html $template)
+    {
+        $this->response->setContent($template->renderPage('/error/not-allowed.phtml'));
 
         $this->response->setStatusCode(StatusCode::OK);
 
