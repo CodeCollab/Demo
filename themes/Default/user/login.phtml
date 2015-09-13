@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-xs-3 hidden-xs"></div>
+    <div class="col-xs-12 col-sm-6">
+        <form action="/" method="post">
+            <input type="hidden" name="csrfToken" value="<?= $this->form['csrfToken']->getValue(); ?>">
+            <div class="form-group <?php if (!$this->form['username']->isValid()) echo 'has-error'; ?>">
+                <label class="control-label"><?= $this->translate('form.login.label.username'); ?></label>
+                <input class="form-control" type="text" name="username" placeholder="<?= $this->translate('form.login.placeholder.username'); ?>" value="<?= $this->escape($this->form['username']->getValue()); ?>">
+                <?php if (!$this->form['username']->isValid()) { ?>
+                    <p class="error"><?= $this->translate('form.error.' . $this->form['username']->getErrorType()); ?></p>
+                <?php } ?>
+            </div>
+            <div class="form-group <?php if (!$this->form['password']->isValid()) echo 'has-error'; ?>">
+                <label class="control-label"><?= $this->translate('form.login.label.password'); ?></label>
+                <input class="form-control" type="password" name="password" placeholder="<?= $this->translate('form.login.placeholder.password'); ?>">
+                <?php if (!$this->form['password']->isValid()) { ?>
+                    <p class="error"><?= $this->translate('form.error.' . $this->form['password']->getErrorType()); ?></p>
+                <?php } ?>
+            </div>
+            <div class="form-group">
+                <label class="control-label"><input type="checkbox" name="rememberme" value="<?= $this->escape($this->form['rememberme']->getValue()); ?>"> <?= $this->translate('form.login.label.rememberme'); ?></label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary"><?= $this->translate('form.login.label.submit'); ?></button>
+            </div>
+            <?php if ($this->form->isValidated() && !$this->form->isValid()) { ?>
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong><?= $this->translate('form.login.error.title'); ?></strong> <?= $this->translate('form.login.error.description'); ?>
+                </div>
+            <?php } ?>
+        </form>
+    </div>
+    <div class="col-xs-3 hidden-xs"></div>
+</div>
