@@ -15,7 +15,7 @@
 namespace Demo\Presentation\Template;
 
 use CodeCollab\Template\Html as BaseTemplate;
-use CodeCollab\Theme\Theme;
+use CodeCollab\Theme\Loader;
 use Minifine\Minifine;
 use CodeCollab\I18n\Translator;
 use CodeCollab\Authentication\User;
@@ -32,7 +32,7 @@ use CodeCollab\CsrfToken\Token;
 class Html extends BaseTemplate
 {
     /**
-     * @var \CodeCollab\Theme\Theme Instance of a theme loader
+     * @var \CodeCollab\Theme\Loader Instance of a theme loader
      */
     private $theme;
 
@@ -60,14 +60,14 @@ class Html extends BaseTemplate
      * Creates instance
      *
      * @param string                      $basePage   The base (skeleton) page template
-     * @param \CodeCollab\Theme\Theme     $theme      Instance of a theme loader
+     * @param \CodeCollab\Theme\Loader    $theme      Instance of a theme loader
      * @param \Minifine\Minifine          $minifier   Instance of a resource minifier
      * @param \CodeCollab\I18n\Translator $translator Instance of a translator
      * @param \CodeCollab\CsrfToken\Token $csrfToken  The CSRF token
      */
     public function __construct(
         string $basePage,
-        Theme $theme,
+        Loader $theme,
         Minifine $minifier,
         Translator $translator,
         User $user,
