@@ -4,9 +4,6 @@ namespace DemoTest\Unit\Storage;
 
 use Demo\Storage\TokenSession;
 
-//use CodeCollab\CsrfToken\Storage\Storage;
-//use CodeCollab\Http\Session\Session;
-
 class TokenSessionTest extends \PHPUnit_Framework_TestCase
 {
     /**
