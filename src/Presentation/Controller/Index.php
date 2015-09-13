@@ -46,7 +46,7 @@ class Index
     /**
      * Renders the home page
      *
-     * @param \CodeCollab\Presentation\Template\Html $template A HTML template renderer
+     * @param \CodeCollab\Template\Html $template A HTML template renderer
      *
      * @return \Symfony\Component\HttpFoundation\Response The HTTP response
      */

@@ -50,9 +50,9 @@ class User
     /**
      * Renders the login page
      *
-     * @param \CodeCollab\Presentation\Template\Html $template A HTML template renderer
-     * @param \CodeCollab\Form\Login                 $form     The login form
-     * @param \CodeCollab\Http\Request\Request       $request  The request object
+     * @param \CodeCollab\Template\Html        $template A HTML template renderer
+     * @param \Demo\Form\Login                 $form     The login form
+     * @param \CodeCollab\Http\Request\Request $request  The request object
      *
      * @return \Symfony\Component\HttpFoundation\Response The HTTP response
      */
@@ -79,8 +79,8 @@ class User
     /**
      * Handles the login form
      *
-     * @param \CodeCollab\Presentation\Template\Html    $template A HTML template renderer
-     * @param \CodeCollab\Form\Login                    $form     The login form
+     * @param \CodeCollab\Template\Html                 $template A HTML template renderer
+     * @param \Demo\Form\Login                          $form     The login form
      * @param \CodeCollab\Http\Request\Request          $request  The request object
      * @param \CodeCollab\Authentication\Authentication $user     The authentication object
      *
@@ -145,7 +145,7 @@ class User
     /**
      * Handles the logout form
      *
-     * @param \CodeCollab\Form\Logout                   $form    The logout form
+     * @param \Demo\Form\Logout                         $form    The logout form
      * @param \CodeCollab\Http\Request\Request          $request The request object
      * @param \CodeCollab\Authentication\Authentication $user    The authentication object
      *

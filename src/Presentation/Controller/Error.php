@@ -46,7 +46,7 @@ class Error
     /**
      * Renders the not found page
      *
-     * @param \CodeCollab\Presentation\Template\Html $template A HTML template renderer
+     * @param \CodeCollab\Template\Html $template A HTML template renderer
      *
      * @return \Symfony\Component\HttpFoundation\Response The HTTP response
      */
@@ -62,7 +62,7 @@ class Error
     /**
      * Render the method not allowed page
      *
-     * @param \CodeCollab\Presentation\Template\Html $template A HTML template renderer
+     * @param \CodeCollab\Template\Html $template A HTML template renderer
      *
      * @return \Symfony\Component\HttpFoundation\Response The HTTP response
      */
