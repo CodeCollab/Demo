@@ -16,6 +16,8 @@ PHP7+
 composer create-project codecollab/demo . 1.0.*
 ```
 
+or
+
 ```
 $ git clone https://github.com/CodeCollab/Demo && composer install
 ```
