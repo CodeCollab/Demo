@@ -54,8 +54,6 @@ class Index
     {
         $this->response->setContent($template->renderPage('/home/index.phtml'));
 
-        $this->response->setStatusCode(StatusCode::OK);
-
         return $this->response;
     }
 }

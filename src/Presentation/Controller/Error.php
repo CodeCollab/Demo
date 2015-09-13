@@ -66,11 +66,11 @@ class Error
      *
      * @return \Symfony\Component\HttpFoundation\Response The HTTP response
      */
-    public function notFound(Html $template)
+    public function methodNotAllowed(Html $template)
     {
-        $this->response->setContent($template->renderPage('/error/not-allowed.phtml'));
+        $this->response->setContent($template->renderPage('/error/generic.phtml'));
 
-        $this->response->setStatusCode(StatusCode::OK);
+        $this->response->setStatusCode(StatusCode::METHOD_NOT_ALLOWED);
 
         return $this->response;
     }
