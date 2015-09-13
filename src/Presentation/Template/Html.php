@@ -18,7 +18,7 @@ use CodeCollab\Template\Html as BaseTemplate;
 use CodeCollab\Theme\Loader;
 use Minifine\Minifine;
 use CodeCollab\I18n\Translator;
-use CodeCollab\Authentication\User;
+use CodeCollab\Authentication\Authentication;
 use CodeCollab\CsrfToken\Token;
 
 /**
@@ -47,7 +47,7 @@ class Html extends BaseTemplate
     private $translator;
 
     /**
-     * @var \CodeCollab\Authentication\User Instance of a user
+     * @var \CodeCollab\Authentication\Authentication Instance of a user
      */
     protected $user;
 
@@ -59,18 +59,19 @@ class Html extends BaseTemplate
     /**
      * Creates instance
      *
-     * @param string                      $basePage   The base (skeleton) page template
-     * @param \CodeCollab\Theme\Loader    $theme      Instance of a theme loader
-     * @param \Minifine\Minifine          $minifier   Instance of a resource minifier
-     * @param \CodeCollab\I18n\Translator $translator Instance of a translator
-     * @param \CodeCollab\CsrfToken\Token $csrfToken  The CSRF token
+     * @param string                                    $basePage   The base (skeleton) page template
+     * @param \CodeCollab\Theme\Loader                  $theme      Instance of a theme loader
+     * @param \Minifine\Minifine                        $minifier   Instance of a resource minifier
+     * @param \CodeCollab\I18n\Translator               $translator Instance of a translator
+     * @param \CodeCollab\Authentication\Authentication $translator Instance of a translator
+     * @param \CodeCollab\CsrfToken\Token               $csrfToken  The CSRF token
      */
     public function __construct(
         string $basePage,
         Loader $theme,
         Minifine $minifier,
         Translator $translator,
-        User $user,
+        Authentication $user,
         Token $csrfToken
     )
     {
