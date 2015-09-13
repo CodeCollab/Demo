@@ -18,6 +18,8 @@ use CodeCollab\Template\Html as BaseTemplate;
 use CodeCollab\Theme\Theme;
 use Minifine\Minifine;
 use CodeCollab\I18n\Translator;
+use CodeCollab\Authentication\User;
+use CodeCollab\CsrfToken\Token;
 
 /**
  * HTML page template renderer
@@ -37,12 +39,22 @@ class Html extends BaseTemplate
     /**
      * @var \Minifine\Minifine Instance of a resource minifier
      */
-    private $minifier;
+    protected $minifier;
 
     /**
      * @var \CodeCollab\I18n\Translator Instance of a translator
      */
     private $translator;
+
+    /**
+     * @var \CodeCollab\Authentication\User Instance of a user
+     */
+    protected $user;
+
+    /**
+     * @var \CodeCollab\CsrfToken\Token The CSRF token
+     */
+    protected $csrfToken;
 
     /**
      * Creates instance
@@ -51,14 +63,24 @@ class Html extends BaseTemplate
      * @param \CodeCollab\Theme\Theme     $theme      Instance of a theme loader
      * @param \Minifine\Minifine          $minifier   Instance of a resource minifier
      * @param \CodeCollab\I18n\Translator $translator Instance of a translator
+     * @param \CodeCollab\CsrfToken\Token $csrfToken  The CSRF token
      */
-    public function __construct(string $basePage, Theme $theme, Minifine $minifier, Translator $translator)
+    public function __construct(
+        string $basePage,
+        Theme $theme,
+        Minifine $minifier,
+        Translator $translator,
+        User $user,
+        Token $csrfToken
+    )
     {
         parent::__construct($basePage);
 
         $this->theme      = $theme;
         $this->minifier   = $minifier;
         $this->translator = $translator;
+        $this->user       = $user;
+        $this->csrfToken  = $csrfToken;
     }
 
     /**
@@ -107,7 +129,7 @@ class Html extends BaseTemplate
      *
      * @return string The translated string
      */
-    private function translate(string $key, array $data = []): string
+    protected function translate(string $key, array $data = []): string
     {
         return $this->translator->translate($key, $data);
     }
