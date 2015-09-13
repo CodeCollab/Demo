@@ -33,6 +33,12 @@ To setup apache you need to route all requests through the `index.php` file in t
 
 If you are using nginx I assume you know what you are doing and you will be able to set it up yourself.
 
+Generate a new encryption key by running:
+
+```
+$ php ./cli/generate-encryption-key.php
+```
+
 ## Contributing
 
 [How to contribute][contributing]
