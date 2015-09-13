@@ -16,6 +16,7 @@ use CodeCollab\Http\Request\Request;
 use CodeCollab\Http\Response\Response;
 use CodeCollab\Http\Session\Native as Session;
 use CodeCollab\Authentication\User;
+use CodeCollab\Encryption\Defuse\Decryptor;
 use CodeCollab\Router\Router;
 use FastRoute\RouteCollector;
 use FastRoute\RouteParser\Std as RouteParser;
@@ -46,9 +47,14 @@ if (php_sapi_name() === 'cli') {
 }
 
 /**
+ * Setup decryptor
+ */
+$decryptor = new Decryptor(file_get_contents(__DIR__ . '/encryption.key'));
+
+/**
  * Setup the request object
  */
-$request = new Request($_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, file_get_contents('php://input'));
+$request = new Request($decryptor, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, file_get_contents('php://input'));
 
 /**
  * Setup the session
@@ -104,11 +110,17 @@ $auryn->share($session);
 $auryn->share($user);
 $auryn->share($minifier);
 $auryn->share($translator);
-$auryn->define('CodeCollab\Encryption\Defuse\Encryptor', [':key' => 'key']);
-$auryn->define('CodeCollab\Encryption\Defuse\Decryptor', [':key' => 'key']);
+$auryn->share($decryptor);
+$auryn->define('CodeCollab\Encryption\Defuse\Encryptor', [':key' => file_get_contents(__DIR__ . '/encryption.key')]);
 $auryn->define('CodeCollab\Http\Cookie\Factory', [':domain' => $request->server('SERVER_NAME'), ':secure' => $request->isEncrypted()]);
 $auryn->define('CodeCollab\Theme\Theme', [':themePath' => __DIR__ . '/themes', ':theme' => 'Default']);
 $auryn->define('Demo\Presentation\Template\Html', [':basePage' => '/page.phtml']);
+$auryn->alias('CodeCollab\CsrfToken\Token', 'CodeCollab\CsrfToken\Handler');
+$auryn->alias('CodeCollab\Authentication\Authentication', 'CodeCollab\Authentication\User');
+$auryn->alias('CodeCollab\CsrfToken\Storage\Storage', 'Demo\Storage\TokenSession');
+$auryn->alias('CodeCollab\Http\Session\Session', 'CodeCollab\Http\Session\Native');
+$auryn->alias('CodeCollab\CsrfToken\Generator\Generator', 'CodeCollab\CsrfToken\Generator\RandomBytes32');
+$auryn->alias('CodeCollab\I18n\Translator', 'CodeCollab\I18n\FileTranslator');
 $auryn->alias('CodeCollab\Template\Html', 'Demo\Presentation\Template\Html');
 $auryn->alias('CodeCollab\Encryption\Encryptor', 'CodeCollab\Encryption\Defuse\Encryptor');
 $auryn->alias('CodeCollab\Encryption\Decryptor', 'CodeCollab\Encryption\Defuse\Decryptor');
