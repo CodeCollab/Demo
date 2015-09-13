@@ -21,6 +21,13 @@ $router
 
 if (!$user->isLoggedIn()) {
     $router
+        ->get('/', ['Demo\Presentation\Controller\User', 'login'])
+        ->post('/', ['Demo\Presentation\Controller\User', 'doLogin'])
+        ->get('/cookie-login', ['Demo\Presentation\Controller\User', 'doCookieLogin'])
+    ;
+} else {
+    $router
         ->get('/', ['Demo\Presentation\Controller\Index', 'index'])
+        ->post('/logout', ['Demo\Presentation\Controller\User', 'doLogout'])
     ;
 }

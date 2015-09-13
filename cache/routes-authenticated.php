@@ -15,21 +15,16 @@
       ),
       '/' => 
       array (
-        0 => 'Demo\\Presentation\\Controller\\User',
-        1 => 'login',
-      ),
-      '/cookie-login' => 
-      array (
-        0 => 'Demo\\Presentation\\Controller\\User',
-        1 => 'doCookieLogin',
+        0 => 'Demo\\Presentation\\Controller\\Index',
+        1 => 'index',
       ),
     ),
     'POST' => 
     array (
-      '/' => 
+      '/logout' => 
       array (
         0 => 'Demo\\Presentation\\Controller\\User',
-        1 => 'doLogin',
+        1 => 'doLogout',
       ),
     ),
   ),
