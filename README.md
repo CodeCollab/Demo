@@ -20,6 +20,19 @@ composer create-project codecollab/demo . 1.0.*
 $ git clone https://github.com/CodeCollab/Demo && composer install
 ```
 
+To setup apache you need to route all requests through the `index.php` file in the /public directory. This directory must also be your document root.
+
+```
+<VirtualHost *:80>
+  ServerName codecollabdemo.local
+  DocumentRoot "/path/to/the/project/public"
+
+  FallbackResource /index.php
+</VirtualHost>
+```
+
+If you are using nginx I assume you know what you are doing and you will be able to set it up yourself.
+
 ## Contributing
 
 [How to contribute][contributing]
