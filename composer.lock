@@ -151,12 +151,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CodeCollab/Form.git",
-                "reference": "5d324b06a0312cd063162b81583bc984bc1c9c36"
+                "reference": "e5f8e0c8f2fe5bbada2455a3272f43e77503458e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CodeCollab/Form/zipball/5d324b06a0312cd063162b81583bc984bc1c9c36",
-                "reference": "5d324b06a0312cd063162b81583bc984bc1c9c36",
+                "url": "https://api.github.com/repos/CodeCollab/Form/zipball/e5f8e0c8f2fe5bbada2455a3272f43e77503458e",
+                "reference": "e5f8e0c8f2fe5bbada2455a3272f43e77503458e",
                 "shasum": ""
             },
             "require": {
@@ -189,7 +189,7 @@
                 "codecollab",
                 "form"
             ],
-            "time": "2015-09-03 16:10:31"
+            "time": "2015-09-13 15:39:43"
         },
         {
             "name": "codecollab/http",
@@ -197,12 +197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CodeCollab/Http.git",
-                "reference": "f687554d04eb7200c4d20702fb985a970510879f"
+                "reference": "e523979458bdd98582ad5cd09aac195e42c432db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CodeCollab/Http/zipball/f687554d04eb7200c4d20702fb985a970510879f",
-                "reference": "f687554d04eb7200c4d20702fb985a970510879f",
+                "url": "https://api.github.com/repos/CodeCollab/Http/zipball/e523979458bdd98582ad5cd09aac195e42c432db",
+                "reference": "e523979458bdd98582ad5cd09aac195e42c432db",
                 "shasum": ""
             },
             "require": {
@@ -239,7 +239,7 @@
                 "response",
                 "session"
             ],
-            "time": "2015-09-05 14:06:58"
+            "time": "2015-09-13 17:42:06"
         },
         {
             "name": "codecollab/i18n",
