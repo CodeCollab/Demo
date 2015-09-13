@@ -1,4 +1,4 @@
-# Form
+# Demo
 
 Demo project of the CodeCollab project libraries
 
@@ -9,6 +9,16 @@ This project is meant to implement the different packages / libraries to find ou
 ## Requirements
 
 PHP7+
+
+## Installation
+
+```
+composer create-project codecollab/demo . 1.0.*
+```
+
+```
+$ git clone https://github.com/CodeCollab/Demo && composer install
+```
 
 ## Contributing
 
